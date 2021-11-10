@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SSEcommerceWebApp.Models
+@inject SignInManager<ApplicationUser> _signInManager
+@inject UserManager<ApplicationUser> _userManager
+
+
+@{
+    var userId = _userManager.GetUserId(User);
+    if (userId != null)
+    {
+        var user = _userManager.Users.FirstOrDefault(x => x.Id == userId);
+        var roles = await _userManager.GetRolesAsync(user);
+        if (roles.Any() && roles.FirstOrDefault() == "Administrator")
+        {
+            Layout = "/Views/Shared/_AdminLayout.cshtml";
+        }
+        else if (roles.Any() && roles.FirstOrDefault() == "Vendor")
+        {
+            Layout = "/Views/Shared/_VendorLayout.cshtml";
+        }
+        else if (roles.Any() && roles.FirstOrDefault() == "Delivery Man")
+        {
+            Layout = "/Views/Shared/_VendorLayout.cshtml";
+        }
+    }
+    else
+    {
+        Layout = "/Views/Shared/_Layout.cshtml";
+    }
+   
+}

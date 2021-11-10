@@ -1,0 +1,3284 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+/*bootstrap override*/
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border-radius: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.7em;
+    padding: .4em .4em;
+}
+
+thead {
+    background-color: #485253;
+    color: white;
+}
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html {
+  font-size: 14px;
+}
+
+
+
+
+
+/*custome CSS*/
+a:hover {
+    text-decoration: none !important;
+    color:rgb(124, 124, 253)
+}
+
+.upload-box {
+    margin-top: 15px;
+    margin-bottom: 23px;
+    height: 100px;
+    width: 250px;
+
+}
+.upload-box-vendor {
+    margin-top: 15px;
+    margin-bottom: 23px;
+    height: 100px;
+    width: 100%;
+
+}
+    
+@media (min-width: 200px) {
+    /*PreLoader*/
+    #loading {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 120vh;
+        background: #fff;
+        z-index: 99999;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%,-50%);
+        width: 260px;
+        height: 200px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    #LoaderImg {
+        width: 200px;
+        height: 100px
+    }
+
+    #data-text {
+        font-size: 16px;
+        color: #fff;
+        -webkit-text-stroke: 0.09vw #383d52;
+        text-transform: uppercase;
+    }
+
+    #data-text:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 18px;
+        width: 0;
+        color: #01fe87;
+        -webkit-text-stroke: 0vw #383d52;
+        border-right: 2px solid #01fe87;
+        font-size: 16px;
+        overflow: hidden;
+        animation: animate1 6s linear infinite;
+        transform: translateY(100px)
+    }
+
+    @keyframes animate1 {
+        0%,10%,100% {
+            width: 0;
+        }
+
+        70%,90% {
+            width: 100%
+        }
+    }
+    .carousel {
+        background: #FAFAFA;
+    }
+
+    .carousel-cell {
+        width: 100%;
+        height: 200px;
+        margin-right: 90px;
+        border-radius: 5px;
+        background: #333;
+    }
+    #mobilescreenLogo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 20px;
+        margin-right: 5px;
+        margin-top: 10px;
+        display: block;
+    }
+    #indeximgdiv {
+        display: none;
+    }
+    #Restaurantmodalclosebtn {
+        transform: translateY(-140px);
+        margin-right: 20px;
+    }
+    .Mainpageimgdiv {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .Mainpagediv1 {
+        width: 90%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 5%;
+    }
+
+    #Mainpagediv1-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv2 {
+        width: 90%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 5%;
+    }
+    #Mainpagediv2-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    .Mainpagediv3 {
+        width: 90%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 5%;
+    }
+    #Mainpagediv3-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    #modalrestaurentrating {
+        height: 600px;
+    }
+    #modalrestaurentrating::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    #modalrestaurentrating::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+        #modalrestaurentrating::-webkit-scrollbar-track:hover {
+            background: #eee;
+            border-radius: 10px;
+        }
+
+    /* Handle */
+    #modalrestaurentrating::-webkit-scrollbar-thumb {
+        background: #8F8F8F;
+        border-radius: 10px;
+    }
+
+        /* Handle on hover */
+        #modalrestaurentrating::-webkit-scrollbar-thumb:hover {
+            background: #767676;
+        }
+
+
+    #modalMyAccount {
+        height: 500px;
+    }
+
+        #modalMyAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalMyAccount::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalMyAccount::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalMyAccount::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalMyAccount::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+    #dashboardcard {
+        transform: translateX(-20px);
+    }
+
+    #dashboardcard2 {
+        transform: translateX(10px);
+        width: 83.5%;
+
+    }
+    #dashboardcard3 {
+        margin-bottom: 25px;
+        width: 94.3%;
+        margin-left: 20px;
+    }
+    #dashboardcard4 {
+        margin-top: 25px;
+        width: 94.3%;
+        margin-left: 20px;
+    }
+    #dashboardcard5 {
+        margin-bottom: 25px;
+        width: 94.3%;
+        margin-left: 20px;
+    }
+    #dashboardcard6 {
+        margin-bottom: 25px;
+        width: 94.3%;
+        margin-left: 20px;
+    }
+    .Myaccount-p3 {
+        font-size: 10px;
+        color: orangered;
+        font-weight: 500;
+    }
+    .pastorderbutton {
+        border: none;
+        text-decoration: none;
+        border-radius: 4px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 10px;
+        padding: 3px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+    .MyaccountImg {
+        width: 50px;
+        height: 50px;
+        border-radius: 33%;
+    }
+    .Myaccount-p-div {
+        padding-left: 57px;
+        margin-top: -50px
+    }
+    .Myaccount-p {
+        margin-top: -5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 150px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: 700
+    }
+
+    .Myaccount-p2 {
+        color: black;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 150px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 11px;
+        font-weight: 400
+    }
+    .Myaccounth4 {
+        font-size: 14px;
+        width: 100px;
+    }
+
+    .Myaccounth5 {
+        font-size: 12px;
+        width: 80px;
+    }
+    #Myaccounth5 {
+        margin-top: 30px;
+    }
+    .indexfirstDiv {
+        margin-top: 70px;
+    }
+    #MyaccountDiv {
+        display: block;
+        margin-top: 70px;
+    }
+    #Myaccountpastorderdiv {
+        margin-top: 30px;
+    }
+    .searchDiv {
+        margin-top: 50px;
+    }
+    .restaurantfirstDiv {
+        margin-top: 70px;
+    }
+    .locationDiv {
+        display: none;
+    }
+    #nav-item-b {
+        font-size: 13px;
+        font-weight: 400;
+        margin-right: -12px;
+        display: block;
+    }
+    #nav-item-a {
+        display: inline-flex;
+        font-size: 17px;
+    }
+    #index-product-item-div {
+        padding-left: 46px;
+    }
+
+    #index-product-item-logo {
+        border-radius: 40%;
+        border: solid white;
+        height: 42px;
+        width: 42px;
+    }
+
+    #index-product-item-p1 {
+        margin-top: 5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 190px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 16px;
+    }
+
+    #index-product-item-p2 {
+        font-size: 13px;
+        color: black;
+    }
+
+    #index-product-item-b {
+        font-weight: 400;
+        color: black;
+        font-size: 15px;
+    }
+    #Logo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 15px;
+        margin-top: 10px;
+        display: none;
+    }
+    #navbar{
+        font-size: 10px;
+    }
+    .HomePagefindLocationBtn {
+        border: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#D4D4D4,#444444,#5F5F5F,#AAAAAA);
+        color: #fff;
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 6px;
+        padding: 10px;
+        transform: translateY(-46px);
+        margin-right: 8px;
+        width: 40%;
+        cursor: pointer;
+        background-size: 300%;
+        float: right;
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+    .HomePagesearchViewP {
+        margin-bottom: 20px;
+        font-size: 13px;
+        color: white;
+    }
+    #HomePageNavbar {
+        display:inherit;
+    }
+    #HomePageLogo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    #carousel-inner {
+        width: 100%;
+        height: 120px;
+        border-radius: 3px;
+    }
+
+    #carouselImg1 {
+        width: 100%;
+        height: 120px;
+    }
+
+
+    /*Restaurant*/
+
+    #RestaurantImg {
+        width: 100%;
+        height: 140px;
+        border-radius: 4px;
+    }
+
+    #RestaurantImg1 {
+        width: 100%;
+        height: 140px;
+    }
+
+    #restaurentLogo {
+        border-radius: 30%;
+        border: solid white;
+        height: 50px;
+        width: 50px;
+    }
+
+    #restaurantDiv {
+        transform: translateY(-60px);
+        margin-left: 10px;
+    }
+
+    #restaurantAnch {
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    .restaurantname {
+        font-size: 12px;
+        font-weight: 500
+    }
+    .restaurantnametext {
+        margin-left: 60px;
+        margin-top: -45px;
+    }
+    #foodtypetext {
+        margin-top: -20px;
+        font-size: 12px;
+    }
+    #info-circle {
+        font-size: 12px;
+        color: white;
+        padding-left: 5px;
+    }
+    #info-heart {
+        font-size: 15px;
+        color: white;
+        padding-right: 10px;
+    }
+
+    #heart {
+        transform: translateY(-185px);
+        padding-right: 13px;
+    }
+    .staricon {
+        font-size: 12px;
+        color: white;
+        padding-left: 5px;
+    }
+    #deliveryfee {
+        margin-top: 10px;
+        padding-left: 5px;
+        font-size: 10px;
+    }
+
+
+    #p {
+        padding-left: 5px;
+    }
+
+    #searchietmsrestaurant {
+        padding: 10px 10px 10px 30px;
+        font-size: 15px;
+        margin-top: -40px;
+        outline: none;
+        margin-left: -22px;
+        border: 1px solid #D1D1D1;
+    }
+
+    #searchicon {
+        font-size: 20px;
+        color: #979797;
+        transform: translateX(10px);
+    }
+
+    #MultiCarousel {
+        margin-top: 60px;
+        transform: translateY(-80px);
+    }
+    #restaurantlink {
+        margin-top: -50px;
+    }
+
+    .ItemsearchDiv {
+        margin-top: 20px;
+        justify-content: left;
+    }
+    #restaurantlink-a {
+        text-decoration: none;
+        color: black;
+        padding-right: 7px;
+    }
+
+        #restaurantlink-a:hover {
+            text-decoration: none;
+            color: orangered;
+        }
+
+    .itenCard {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    #cart-container {
+        width: 100%;
+        height: 130px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+    }
+
+
+    .itemcardtextDiv {
+        width: 50%;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .itemcardtext {
+        height: 60px;
+        width: 100%
+    }
+    .itemcardB{
+        font-size: 12px;
+    }
+    .itemcardP {
+        font-size: 10px;
+    }
+    .itemcardicons {
+        margin-top: 2px
+    }
+    #itemcardheart {
+        padding-left: 10px;
+        padding-right: 5px;
+        margin-top: 3px;
+        color: gray;
+    }
+    #itemcardplus-square {
+        font-size: 17px;
+        color: gray
+    }
+    .itemcardImg {
+        height: 110px;
+        width: 110px;
+        float: right;
+        margin-top: 14px;
+        margin-right: 13px;
+    }
+    #itemlink {
+        display: none;
+    }
+
+    #itemCart {
+        display: none;
+    }
+    /*Restaurant*/
+    .animated-text {
+        color: #fff;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0 10px;
+        height: 60px;
+        overflow: hidden;
+        font-weight: 700;
+    }
+
+    .line {
+        text-align: center;
+        font-size: 15px;
+        line-height: 60px;
+    }
+
+        .line:first-child {
+            animation: anim 12s infinite;
+        }
+
+    @keyframes anim {
+        0% {
+            margin-top: 0;
+        }
+
+        16% {
+            margin-top: -60px;
+        }
+
+        33% {
+            margin-top: -120px;
+        }
+
+        50% {
+            margin-top: -180px;
+        }
+
+        66% {
+            margin-top: -120px;
+        }
+
+        82% {
+            margin-top: -60px;
+        }
+
+        100% {
+            margin-top: 0;
+        }
+    }
+    #HomePagesearchDiv {
+        margin-top: 200px;
+        margin-right: 20px;
+    }
+
+    #HomePagesearchietms {
+        padding: 20px 20px 20px 50px;
+        font-size: 13px;
+        width: 400px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+    }
+
+    #HomePagesearch {
+        font-size: 30px;
+        color: #979797;
+        transform: translateX(45px);
+        margin-top: 17px;
+    }
+    #HomePagePhone{
+        font-size: 13px;
+    }
+
+    #multicarouselImg {
+        width: 100%;
+        height: 120px;
+    }
+}
+@media (min-width: 473px) {
+    /*PreLoader*/
+    #loading {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #fff;
+        z-index: 99999;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        height: 200px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    #LoaderImg {
+        width: 270px;
+        height: 140px
+    }
+
+    #data-text {
+        font-size: 2vw;
+        color: #fff;
+        -webkit-text-stroke: 0.09vw #383d52;
+        text-transform: uppercase;
+    }
+
+    #data-text:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 0;
+        color: #01fe87;
+        -webkit-text-stroke: 0vw #383d52;
+        border-right: 2px solid #01fe87;
+        font-size: 2vw;
+        overflow: hidden;
+        animation: animate1 6s linear infinite;
+        transform: translateY(140px)
+    }
+
+    @keyframes animate1 {
+        0%,10%,100% {
+            width: 0;
+        }
+
+        70%,90% {
+            width: 100%
+        }
+    }
+    .carousel {
+        background: #FAFAFA;
+    }
+
+    .carousel-cell {
+        width: 100%;
+        height: 200px;
+        margin-right: 90px;
+        border-radius: 5px;
+        background: #333;
+    }
+    #mobilescreenLogo {
+        display: none;
+    }
+    #indeximgdiv {
+        display: none;
+    }
+    #Logo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 15px;
+        margin-left: -5px;
+        display: block;
+    }
+    #Restaurantmodalclosebtn {
+        transform: translateY(-140px);
+        margin-right: 20px;
+    }
+    .Mainpageimgdiv {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .Mainpagediv1 {
+        width: 66%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 17%;
+    }
+
+    #Mainpagediv1-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv2 {
+        width: 66%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 17%;
+    }
+
+    #Mainpagediv2-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv3 {
+        width: 66%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 17%;
+    }
+
+    #Mainpagediv3-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    #modalrestaurentrating {
+        height: 600px;
+    }
+    #modalrestaurentrating::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    #modalrestaurentrating::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+        #modalrestaurentrating::-webkit-scrollbar-track:hover {
+            background: #eee;
+            border-radius: 10px;
+        }
+
+    /* Handle */
+    #modalrestaurentrating::-webkit-scrollbar-thumb {
+        background: #8F8F8F;
+        border-radius: 10px;
+    }
+
+        /* Handle on hover */
+        #modalrestaurentrating::-webkit-scrollbar-thumb:hover {
+            background: #767676;
+        }
+
+
+    #modalMyAccount {
+        height: 500px;
+    }
+
+        #modalMyAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalMyAccount::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalMyAccount::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalMyAccount::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalMyAccount::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+    #dashboardcard{
+        transform: translateX(-20px);
+    }
+    #dashboardcard2 {
+        transform: translateX(10px);
+        width: 93.5%;
+    }
+    .Myaccount-p3 {
+        font-size: 12px;
+        color: orangered;
+        font-weight: 500;
+    }
+    .pastorderbutton {
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 12px;
+        padding: 4px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+    .MyaccountImg {
+        width: 50px;
+        height: 50px;
+        border-radius: 35%;
+    }
+    .Myaccount-p-div {
+        padding-left: 65px;
+        margin-top: -55px
+    }
+    .Myaccount-p {
+        margin-top: -5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 150px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 15px;
+        font-weight: 700
+    }
+    .Myaccount-p2 {
+        color: black;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 150px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: 400
+    }
+    .Myaccounth4 {
+        font-size: 14px;
+        width: 100px;
+    }
+
+    .Myaccounth5 {
+        font-size: 12px;
+        width: 80px;
+    }
+    #Myaccounth5 {
+        margin-top: 30px;
+    }
+    .indexfirstDiv {
+        margin-top: 80px;
+    }
+    .searchDiv {
+        margin-top: 67px;
+    }
+    #MyaccountDiv {
+        display: block;
+        margin-top: 80px;
+    }
+    #Myaccountpastorderdiv {
+        margin-top: 30px;
+    }
+    .restaurantfirstDiv {
+        margin-top: 80px;
+    }
+    #nav-item-a {
+        display: inline-flex;
+        font-size: 13px;
+    }
+    #nav-item-b1 {
+        font-size: 10px;
+        font-weight: 400;
+        margin-right: 6px;
+    }
+
+    #nav-item-b2 {
+        font-size: 11px;
+    }
+    .locationDiv {
+        display: none;
+    }
+    #nav-item-b {
+        display: none;
+    }
+    #index-product-item-div {
+        padding-left: 42px;
+    }
+
+    #index-product-item-logo {
+        border-radius: 39%;
+        border: solid white;
+        height: 40px;
+        width: 40px;
+    }
+
+    #index-product-item-p1 {
+        margin-top: 5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 160px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+
+    #index-product-item-p2 {
+        font-size: 12px;
+        color: black;
+    }
+
+    #index-product-item-b {
+        font-weight: 400;
+        color: black;
+        font-size: 14px;
+    }
+    /*Restaurant*/
+    #MultiCarousel {
+        margin-top: 60px;
+        transform: translateY(-80px);
+    }
+    #RestaurantImg {
+        width: 100%;
+        height: 140px;
+        border-radius: 4px;
+    }
+
+    #RestaurantImg1 {
+        width: 100%;
+        height: 140px;
+    }
+
+    #restaurentLogo {
+        border-radius: 30%;
+        border: solid white;
+        height: 50px;
+        width: 50px;
+    }
+
+    #restaurantDiv {
+        transform: translateY(-60px);
+        margin-left: 10px;
+    }
+
+    #restaurantAnch {
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .restaurantname {
+        font-size: 15px;
+        font-weight: 600
+    }
+
+    .restaurantnametext {
+        margin-left: 60px;
+        margin-top: -45px;
+    }
+    #foodtypetext {
+        margin-top: -20px;
+        font-size: 16px;
+    }
+
+    #info-circle {
+        font-size: 15px;
+        color: white;
+        padding-left: 5px;
+    }
+
+    #info-heart {
+        font-size: 20px;
+        color: white;
+        padding-right: 10px;
+    }
+
+    #heart {
+        transform: translateY(-90px);
+        padding-right: 20px;
+    }
+
+    .staricon {
+        font-size: 15px;
+        color: white;
+        padding-left: 5px;
+    }
+
+    #deliveryfee {
+        margin-top: 10px;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+
+    #p {
+        padding-left: 10px;
+    }
+
+    #searchietmsrestaurant {
+        padding: 10px 10px 10px 30px;
+        font-size: 15px;
+        margin-top: -40px;
+        outline: none;
+        margin-left: -22px;
+        border: 1px solid #D1D1D1;
+    }
+
+    #searchicon {
+        font-size: 20px;
+        color: #979797;
+        transform: translateX(10px);
+    }
+
+    #restaurantlink {
+        margin-top: -60px;
+    }
+
+    .ItemsearchDiv {
+        margin-top: 20px;
+        justify-content: left;
+    }
+
+    #restaurantlink-a {
+        text-decoration: none;
+        color: black;
+        padding-right: 7px;
+    }
+
+        #restaurantlink-a:hover {
+            text-decoration: none;
+            color: orangered;
+        }
+
+    .itenCard {
+        width: 100%;
+        height: 200px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .itemcardtextDiv {
+        width: 55%;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .itemcardtext {
+        height: 100px;
+        width: 100%
+    }
+    .itemcardB {
+        font-size: 17px;
+    }
+    .itemcardP {
+        font-size: 12px;
+    }
+    .itemcardicons {
+        margin-top: 8px
+    }
+    #itemcardheart {
+        padding-left: 10px;
+        padding-right: 5px;
+        margin-top: 3px;
+        color: gray;
+        font-size: 1.2rem;
+    }
+    #itemcardplus-square {
+        font-size: 20px;
+        color: gray
+    }
+    .itemcardImg {
+        height: 170px;
+        width: 170px;
+        float: right;
+        margin-top: 13px;
+        margin-right: 13px;
+    }
+    #itemlink {
+        display: none;
+    }
+
+    #itemCart {
+        display: none;
+    }
+    /*Restaurant*/
+
+    .animated-text {
+        color: #fff;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0 40px;
+        height: 60px;
+        overflow: hidden;
+        font-weight: 700;
+    }
+
+    .line {
+        text-align: center;
+        font-size: 20px;
+        line-height: 60px;
+    }
+
+        .line:first-child {
+            animation: anim 12s infinite;
+        }
+
+    @keyframes anim {
+        0% {
+            margin-top: 0;
+        }
+
+        16% {
+            margin-top: -60px;
+        }
+
+        33% {
+            margin-top: -120px;
+        }
+
+        50% {
+            margin-top: -180px;
+        }
+
+        66% {
+            margin-top: -120px;
+        }
+
+        82% {
+            margin-top: -60px;
+        }
+
+        100% {
+            margin-top: 0;
+        }
+    }
+    .HomePagefindLocationBtn {
+        border: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#D4D4D4,#444444,#5F5F5F,#AAAAAA);
+        color: #fff;
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 8px;
+        padding: 10px;
+        transform: translateY(-48px);
+        margin-right: 8px;
+        width: 30%;
+        cursor: pointer;
+        background-size: 300%;
+        float: right;
+        margin-top: 8px;
+        font-weight: 500;
+    }
+    #HomePagePhone {
+        font-size: 15px;
+    }
+    #HomePageLogo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+@media (min-width: 768px) {
+    /*PreLoader*/
+    #loading {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #fff;
+        z-index: 99999;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 58%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 200px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    #LoaderImg {
+        width: 270px;
+        height: 140px
+    }
+
+    #data-text {
+        font-size: 2vw;
+        color: #fff;
+        -webkit-text-stroke: 0.09vw #383d52;
+        text-transform: uppercase;
+    }
+
+    #data-text:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 0;
+        color: #01fe87;
+        -webkit-text-stroke: 0vw #383d52;
+        border-right: 2px solid #01fe87;
+        font-size: 2vw;
+        overflow: hidden;
+        animation: animate1 6s linear infinite;
+        transform: translateY(140px)
+    }
+
+    @keyframes animate1 {
+        0%,10%,100% {
+            width: 0;
+        }
+
+        70%,90% {
+            width: 100%
+        }
+    }
+    .carousel {
+        background: #FAFAFA;
+    }
+
+    .carousel-cell {
+        width: 48%;
+        height: 200px;
+        margin-right: 28px;
+        border-radius: 5px;
+        background: #333;
+    }
+    #mobilescreenLogo {
+        display: none;
+    }
+    #indeximgdiv {
+        display: block;
+    }
+    #Restaurantmodalclosebtn {
+        transform: translateY(-350px);
+        margin-right: 20px;
+    }
+    .Mainpageimgdiv {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .Mainpagediv1 {
+        width: 36%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 32%;
+    }
+
+    #Mainpagediv1-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv2 {
+        width: 36%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 32%;
+    }
+
+    #Mainpagediv2-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv3 {
+        width: 36%;
+        height: 60px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 32%;
+    }
+
+    #Mainpagediv3-a {
+        font-size: 35px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    #modalrestaurentrating {
+        height: 600px;
+    }
+    #modalrestaurentrating::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    #modalrestaurentrating::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+        #modalrestaurentrating::-webkit-scrollbar-track:hover {
+            background: #eee;
+            border-radius: 10px;
+        }
+
+    /* Handle */
+    #modalrestaurentrating::-webkit-scrollbar-thumb {
+        background: #8F8F8F;
+        border-radius: 10px;
+    }
+
+        /* Handle on hover */
+        #modalrestaurentrating::-webkit-scrollbar-thumb:hover {
+            background: #767676;
+        }
+
+
+    #modalMyAccount {
+        height: 500px;
+    }
+
+        #modalMyAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalMyAccount::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalMyAccount::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalMyAccount::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalMyAccount::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+    #dashboardcard3 {
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+    #dashboardcard3 {
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+    #dashboardcard6 {
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+    #dashboardcardflex {
+        display: inline-block;
+        height: 130px
+    }
+
+    #icon {
+        transform: translateY(50px)
+    }
+    .Myaccount-p3 {
+        font-size: 13px;
+        color: orangered;
+        font-weight: 500;
+    }
+    .pastorderbutton {
+        border: none;
+        text-decoration: none;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 13px;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+    .MyaccountImg {
+        width: 55px;
+        height: 55px;
+        border-radius: 37%;
+    }
+    .Myaccount-p-div {
+        padding-left: 65px;
+        margin-top: -60px
+    }
+    .Myaccount-p {
+        margin-top: -5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 18px;
+        font-weight: 700
+    }
+    .Myaccount-p2 {
+        color: black;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 400
+    }
+    .Myaccounth4 {
+        font-size: 17px;
+        width: 130px;
+    }
+    .Myaccounth5 {
+        font-size: 15px;
+        width: 85px;
+    }
+    #Myaccounth5 {
+        margin-top: 30px;
+    }
+    .indexfirstDiv {
+        margin-top: 100px;
+    }
+    #MyaccountDiv {
+        display: block;
+        margin-top: 100px;
+    }
+    #Myaccountpastorderdiv {
+        margin-top: 30px;
+    }
+    .searchDiv {
+        margin-top: 80px;
+    }
+    .restaurantfirstDiv {
+        margin-top: 100px;
+    }
+    .locationDiv {
+       display: none;
+    }
+    #locationDiv {
+        margin-right: 10px;
+    }
+    #nav-item-b {
+        display: none;
+    }
+
+    #Logo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 20px;
+        margin-left: -10px;
+        display: block;
+    }
+
+    #nav-item-a {
+        display: inline-flex;
+        font-size: 15px;
+    }
+
+    #nav-item-b1 {
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 6px;
+    }
+
+    #nav-item-b2 {
+        font-size: 13px;
+    }
+    #index-product-item-div {
+        padding-left: 35px;
+    }
+    #index-product-item-logo {
+        border-radius: 38%;
+        border: solid white;
+        height: 35px;
+        width: 35px;
+    }
+    #index-product-item-p1 {
+        margin-top: 5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 130px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    #index-product-item-p2 {
+        font-size: 11px;
+        color: black;
+    }
+
+    #index-product-item-b {
+        font-weight: 400;
+        color: black;
+        font-size: 13px;
+    }
+  html {
+    font-size: 16px;
+  }
+
+  /*Restaurant*/
+
+    #RestaurantImg {
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+    }
+
+    #RestaurantImg1 {
+        width: 100%;
+        height: 350px;
+        filter: brightness(70%);
+    }
+    #restaurentLogo {
+        border-radius: 30%;
+        border: solid white;
+        height: 100px;
+        width: 100px;
+    }
+    #restaurantDiv {
+        transform: translateY(-125px);
+        margin-left: 30px;
+    }
+    #restaurantAnch {
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    .restaurantname {
+        font-size: 25px;
+        font-weight: 600
+    }
+
+    .restaurantnametext {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    #foodtypetext {
+        margin-top: -20px;
+        font-size: 20px;
+    }
+    #info-circle {
+        font-size: 25px;
+        color: white;
+        padding-left: 5px;
+    }
+    #info-heart {
+        font-size: 25px;
+        color: white;
+        padding-right: 15px;
+    }
+    #heart{
+        transform: translateY(-40px);
+        padding-right: 20px;
+    }
+    .staricon {
+        font-size: 25px;
+        color: white;
+        padding-left: 5px;
+    }
+    #deliveryfee {
+        margin-top: 20px;
+        padding-left: 30px;
+        font-size: 17px;
+    }
+    #p{
+        padding-left: 30px;
+    }
+
+    #searchietmsrestaurant {
+        padding: 20px 20px 20px 50px;
+        font-size: 20px;
+        margin-top: -40px;
+        outline: none;
+        margin-left: -30px;
+        border: 1px solid #D1D1D1;
+    }
+
+    #searchicon {
+        font-size: 30px;
+        color: #979797;
+        transform:translateX(15px);
+    }
+    #restaurantlink {
+        margin-top: -40px;
+    }
+    .ItemsearchDiv {
+        margin-top: 40px;
+        justify-content: left;
+    }
+    #restaurantlink-a {
+        text-decoration: none;
+        color: black; 
+        padding-right: 7px; 
+    }
+    #restaurantlink-a:hover {
+        text-decoration: none;
+        color: orangered;
+    }
+
+    .itenCard {
+        width: 500px;
+        height: 200px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        margin-top: 10px;
+
+    }
+    .itemcardtextDiv {
+        width: 55%;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .itemcardtext {
+        height: 100px;
+        width: 100%
+    }
+    .itemcardB {
+        font-size: 20px;
+    }
+    .itemcardP {
+        font-size: 13px;
+    }
+    .itemcardicons {
+        margin-top: 10px
+    }
+    #itemcardheart {
+        padding-left: 10px;
+        padding-right: 5px;
+        color: gray;
+        font-size: 1.4rem;
+    }
+    #itemcardplus-square {
+        font-size: 24px;
+        color: gray
+    }
+    .itemcardImg {
+        height: 170px;
+        width: 170px;
+        float: right;
+        margin-top: 13px;
+        margin-right: 13px;
+    }
+    #itemlink {
+        display: none;
+    }
+
+    #itemCart {
+        display: none;
+    }
+    /*Restaurant*/
+    .animated-text {
+        color: #fff;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0 40px;
+        height: 60px;
+        overflow: hidden;
+        font-weight: 700;
+    }
+
+    .line {
+        text-align: center;
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+        .line:first-child {
+            animation: anim 12s infinite;
+        }
+
+    @keyframes anim {
+        0% {
+            margin-top: 0;
+        }
+
+        16% {
+            margin-top: -60px;
+        }
+
+        33% {
+            margin-top: -120px;
+        }
+
+        50% {
+            margin-top: -180px;
+        }
+
+        66% {
+            margin-top: -120px;
+        }
+
+        82% {
+            margin-top: -60px;
+        }
+
+        100% {
+            margin-top: 0;
+        }
+    }
+    .HomePagefindLocationBtn {
+        border: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#D4D4D4,#444444,#5F5F5F,#AAAAAA);
+        color: #fff;
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 10px;
+        transform: translateY(-52px);
+        margin-right: 12px;
+        width: 30%;
+        cursor: pointer;
+        background-size: 300%;
+        float: right;
+        margin-top: -1px;
+        font-weight: 600;
+    }
+
+    .HomePagesearchViewP {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: white;
+    }
+    #search {
+        font-size: 30px;
+        color: #979797;
+        transform: translateX(50px);
+    }
+
+    #HomePagesearch {
+        font-size: 30px;
+        color: #979797;
+        transform: translateX(50px);
+    }
+
+    #HomePagesearchDiv {
+        margin-top: 230px;
+        width: 50%;
+
+    }
+
+    #HomePagesearchietms {
+        padding: 20px 20px 20px 50px;
+        font-size: 20px;
+        width: 700px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        margin-left: 4px;
+    }
+    #HomePageLogo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        color: white;
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+    #HomePagePhone {
+        font-size: 18px;
+    }
+
+    #HomePagesearch {
+        font-size: 30px;
+        color: #979797;
+        margin-left: 240px;
+        margin-top: 17px;
+    }
+
+    #carousel-inner {
+        width: 100%;
+        height: 220px;
+
+       border-radius: 5px;
+    }
+    #carouselImg1 {
+        width: 100%;
+        height: 220px;
+    }
+    #MultiCarousel {
+        margin-top: 60px;
+    }
+    #multicarouselImg {
+        width: 100%;
+        height: 220px;
+    }
+    .findLocationBtn {
+        border: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        color: #fff;
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 10px;
+        padding: 12px;
+        margin-top: -2px;
+        width: 30%;
+        cursor: pointer;
+        background-size: 300%;
+        float: right;
+    }
+}
+
+@media (min-width: 992px) {
+    /*PreLoader*/
+    #loading {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #fff;
+        z-index: 99999;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%,-50%);
+        width: 340px;
+        height: 200px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    #LoaderImg {
+        width: 270px;
+        height: 140px
+    }
+
+    #data-text {
+        font-size: 2vw;
+        color: #fff;
+        -webkit-text-stroke: 0.09vw #383d52;
+        text-transform: uppercase;
+    }
+
+    #data-text:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 28px;
+        width: 0;
+        color: #01fe87;
+        -webkit-text-stroke: 0vw #383d52;
+        border-right: 2px solid #01fe87;
+        font-size: 2vw;
+        overflow: hidden;
+        animation: animate1 6s linear infinite;
+        transform: translateY(140px)
+    }
+
+    @keyframes animate1 {
+        0%,10%,100% {
+            width: 0;
+        }
+
+        70%,90% {
+            width: 100%
+        }
+    }
+    .carousel {
+        background: #FAFAFA;
+    }
+
+    .carousel-cell {
+        width: 28%;
+        height: 200px;
+        margin-right: 68px;
+        border-radius: 5px;
+        background: #333;
+    }
+    #mobilescreenLogo {
+        display: none;
+    }
+    #indeximgdiv {
+        display: block;
+    }
+    #Restaurantmodalclosebtn {
+        transform: translateY(-350px);
+        margin-right: 20px;
+    }
+    .Mainpageimgdiv {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .Mainpagediv1 {
+        width: 25%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 37.5%;
+    }
+
+    #Mainpagediv1-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv2 {
+        width: 25%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 37.5%;
+    }
+
+    #Mainpagediv2-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .Mainpagediv3 {
+        width: 25%;
+        height: 55px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 37.5%;
+    }
+
+    #Mainpagediv3-a {
+        font-size: 30px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    #modalrestaurentrating {
+        width: 800px;
+        margin-left: -160px;
+        height: 600px;
+    }
+        #modalrestaurentrating::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalrestaurentrating::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalrestaurentrating::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalrestaurentrating::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalrestaurentrating::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+
+    #modalMyAccount {
+        width: 700px;
+        margin-left: -120px;
+        height: 600px;
+    }
+
+        #modalMyAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalMyAccount::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalMyAccount::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalMyAccount::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalMyAccount::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+    .Myaccount-p3 {
+        font-size: 13px;
+        color: orangered;
+        font-weight: 500;
+    }
+    .pastorderbutton {
+        border: none;
+        text-decoration: none;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 13px;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+    .MyaccountImg {
+        width: 55px;
+        height: 55px;
+        border-radius: 37%;
+    }
+    .Myaccount-p-div {
+        padding-left: 65px;
+        margin-top: -60px
+    }
+    .Myaccount-p {
+        margin-top: -5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 18px;
+        font-weight: 700
+    }
+    .Myaccount-p2 {
+        color: black;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 400
+    }
+    .Myaccounth4 {
+        font-size: 22px;
+        width: 100%;
+    }
+    .Myaccounth5 {
+        font-size: 20px;
+        width: 100%;
+    }
+    #Myaccounth5 {
+        margin-top: 50px;
+    }
+    .indexfirstDiv {
+        margin-top: 110px;
+    }
+    #MyaccountDiv {
+        display: flex;
+        margin-top: 110px;
+    }
+    #Myaccountpastorderdiv {
+        margin-top: 70px;
+    }
+    .searchDiv {
+        margin-top: 90px;
+    }
+    .restaurantfirstDiv {
+        margin-top: 110px;
+    }
+    #itemlink-a {
+        color: gray;
+        display: block;
+        text-decoration: none;
+        margin-top: 20px;
+    }
+
+        #itemlink-a:hover {
+            color: orangered;
+        }
+    .locationDiv {
+        font-weight: 600;
+        display:flex;
+    }
+    #locationDiv {
+        margin-right: 15px;
+    }
+    #nav-item-b {
+        display: none;
+    }
+    #Logo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 25px;
+        margin-left: -75px;
+        display: block;
+    }
+    #nav-item-a {
+        display: inline-flex;
+        font-size: 20px;
+    }
+    #nav-item-b1 {
+        font-size: 14px;
+        font-weight: 400;
+        margin-right: 10px;
+    }
+    #nav-item-b2 {
+        font-size: 15px;
+    }
+    #index-product-item-div {
+        padding-left: 50px;
+    }
+    #index-product-item-logo {
+        border-radius: 40%;
+        border: solid white;
+        height: 43px;
+        width: 43px;
+    }
+    #index-product-item-p1 {
+        margin-top: 5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 190px;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 16px;
+    }
+
+    #index-product-item-p2 {
+        font-size: 13px;
+        color: black;
+    }
+
+    #index-product-item-b {
+        font-weight: 400;
+        color: black;
+        font-size: 15px;
+    }
+    #itemlink {
+        display: block;
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        height: 400px;
+        top: 70px;
+        bottom: auto;
+    }
+    #itemCart {
+        display: block;
+        margin-top: 13px;
+    }
+}
+
+@media (min-width: 1326px) {
+    /*PreLoader*/
+    #loading {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #fff;
+        z-index: 99999;
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%,-50%);
+        width: 500px;
+        height: 200px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    #LoaderImg {
+        width: 270px;
+        height: 140px
+    }
+
+    #data-text {
+        font-size: 2vw;
+        color: #fff;
+        -webkit-text-stroke: 0.09vw #383d52;
+        text-transform: uppercase;
+    }
+
+    #data-text:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 38px;
+        width: 0;
+        color: #01fe87;
+        -webkit-text-stroke: 0vw #383d52;
+        border-right: 2px solid #01fe87;
+        font-size: 2vw;
+        overflow: hidden;
+        animation: animate1 6s linear infinite;
+        transform: translateY(140px)
+    }
+
+    @keyframes animate1 {
+        0%,10%,100% {
+            width: 0;
+        }
+
+        70%,90% {
+            width: 100%
+        }
+    }
+        .carousel {
+        background: #FAFAFA;
+    }
+
+    .carousel-cell {
+        width: 32%;
+        height: 200px;
+        margin-right: 20px;
+        border-radius: 5px;
+        background: #333;
+    }
+    #mobilescreenLogo {
+        display: none;
+    }
+    #indeximgdiv {
+        display: block;
+    }
+    #Restaurantmodalclosebtn {
+        transform: translateY(-350px);
+        margin-right: 20px;
+    }
+    .Mainpageimgdiv {
+        width: 100%;
+        height: 140px;
+        border: 1px solid #D1D1D1;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .Mainpagediv1 {
+        width: 23%;
+        height: 57px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 38.5%;
+    }
+    #Mainpagediv1-a {
+        font-size: 32px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    .Mainpagediv2 {
+        width: 23%;
+        height: 57px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 38.5%;
+    }
+    #Mainpagediv2-a {
+        font-size: 32px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    .Mainpagediv3 {
+        width: 23%;
+        height: 57px;
+        border: 1px solid #D1D1D1;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-left: 38.5%;
+    }
+    #Mainpagediv3-a {
+        font-size: 32px;
+        color: green;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+    #modalrestaurentrating {
+        width: 800px;
+        margin-left: -160px;
+        height: 600px;
+    }
+        #modalrestaurentrating::-webkit-scrollbar {
+            width: 10px;
+        }
+
+    /* Track */
+        #modalrestaurentrating::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+            #modalrestaurentrating::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+    /* Handle */
+        #modalrestaurentrating::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+            #modalrestaurentrating::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+
+
+    #modalMyAccount {
+        width: 700px;
+        margin-left: -120px;
+        height: 600px;
+    }
+
+        #modalMyAccount::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #modalMyAccount::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+            #modalMyAccount::-webkit-scrollbar-track:hover {
+                background: #eee;
+                border-radius: 10px;
+            }
+
+        /* Handle */
+        #modalMyAccount::-webkit-scrollbar-thumb {
+            background: #8F8F8F;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            #modalMyAccount::-webkit-scrollbar-thumb:hover {
+                background: #767676;
+            }
+    #dashboardcardflex {
+        display: inline-flex;
+        height: 80px
+    }
+
+    #icon {
+        transform: translateY(0px)
+    }
+    .Myaccount-p3 {
+        font-size: 13px;
+        color: orangered;
+        font-weight: 500;
+    }
+    .pastorderbutton {
+        border: none;
+        text-decoration: none;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 13px;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+    .MyaccountImg {
+        width: 55px;
+        height: 55px;
+        border-radius: 37%;
+    }
+    .Myaccount-p-div {
+        padding-left: 65px;
+        margin-top: -60px
+    }
+    .Myaccount-p {
+        margin-top: -5px;
+        color: black;
+        margin-bottom: -2px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 18px;
+        font-weight: 700
+    }
+    .Myaccount-p2 {
+        color: black;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 1.4em;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 400
+    }
+    .Myaccounth4 {
+        font-size: 25px;
+        width: 100%;
+    }
+    .Myaccounth5 {
+        font-size: 23px;
+        width: 100%;
+    }
+    #Myaccounth5 {
+        margin-top: 50px;
+    }
+    .indexfirstDiv {
+        margin-bottom: 110px;
+    }
+    #MyaccountDiv {
+        display: flex;
+        margin-top: 110px;
+    }
+    #Myaccountpastorderdiv {
+        margin-top: 70px;
+    }
+    .searchDiv {
+        margin-top: 90px;
+    }
+    #itemlink-a {
+        display: block;
+        text-decoration: none;
+        margin-top: 20px;
+    }
+        #itemlink-a :hover{
+            color: orangered;
+        }
+        .locationDiv {
+            font-weight: 600;
+        }
+    #locationDiv{
+        margin-right: 25px;
+    }
+    #Logo {
+        font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+        text-decoration: blink;
+        font-size: 25px;
+        margin-right: -78px;
+        display: block;
+    }
+    #nav-item-b {
+        font-size: 13px;
+        font-weight: 400;
+        margin-right: -12px;
+        display:block;
+    }
+    #nav-item-a {
+        display: inline-flex;
+        font-size: 17px;
+    }
+}
+    .border-top {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    button.accept-policy {
+        font-size: 1rem;
+        line-height: inherit;
+    }
+
+    /* Sticky footer styles
+-------------------------------------------------- */
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        /* Margin bottom by footer height */
+
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 60px; /* Vertically center the text there */
+    }
+
+    .findLocationBtn {
+        border: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        color: #fff;
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 12px;
+        transform: translateY(-52px);
+        margin-right: 4px;
+        width: 30%;
+        cursor: pointer;
+        background-size: 300%;
+        float: right;
+    }
+
+    #loginBtn {
+        border: none;
+        text-decoration: none;
+        border-radius: 6px;
+        background-image: linear-gradient(to left,#ED4C67,#833471,#B53471,#6F1E51);
+        transition: 0.6s;
+        display: block;
+        font-family: inherit;
+        font-size: 16px;
+        padding: 8px;
+        width: 100%;
+        cursor: pointer;
+        background-size: 300%;
+        font-weight: 500;
+    }
+
+#searchietms {
+    padding: 20px 20px 20px 50px;
+    font-size: 20px;
+    margin-top: -40px;
+    outline: none;
+    border: 1px solid #D1D1D1;
+}
+
+    #search {
+        font-size: 30px;
+        color: #979797;
+        margin-left: 15px;
+        transform: translateY(25px);
+    }
+
+
+    #modal-header {
+        margin-top: 40px;
+    }
+
+    .searchViewP {
+        margin-bottom: -10px;
+        margin-left: -15px;
+        color: gray;
+    }
+
+
+    .n1 {
+        margin-top: 15px;
+        margin-bottom: -30px;
+    }
+
+    .n2 {
+        margin-top: 15px;
+        margin-bottom: -30px;
+    }
+
+
+
+
+    .MultiCarousel {
+        float: left;
+        overflow: hidden;
+        margin-top: 45px;
+        width: 100%;
+        position: relative;
+    }
+
+        .MultiCarousel .MultiCarousel-inner {
+            transition: 0.5s ease all;
+            float: left;
+        }
+
+            .MultiCarousel .MultiCarousel-inner .item {
+                float: left;
+            }
+
+                .MultiCarousel .MultiCarousel-inner .item > div {
+                    text-align: center;
+                    padding: 0 10px 0 10px;
+                }
+
+        .MultiCarousel .leftLst, .MultiCarousel .rightLst {
+            position: absolute;
+            border-radius: 50%;
+            top: calc(50% - 15px);
+        }
+
+        .MultiCarousel .leftLst {
+            left: 0;
+        }
+
+        .MultiCarousel .rightLst {
+            right: 0;
+        }
+
+            .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
+                pointer-events: none;
+                background: #ccc;
+            }
+
+    #backgroundImg {
+        background: rgba(0,0,0,0.7)url('https://media.istockphoto.com/photos/varied-food-carbohydrates-protein-vegetables-fruits-dairy-legumes-on-picture-id1218254547?b=1&k=20&m=1218254547&s=170667a&w=0&h=mOEC7x7qU5NC78mCULs-jAPeLkxy8opOvIbGSnwmAyw=');
+        background-blend-mode: darken;
+        background-repeat: no-repeat;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        height: 620px;
+        overflow: hidden;
+    }
+
+.HomePageLogo {
+    font-family: 'Lucida Handwriting', 'Brush Script MT', Cursive;
+    text-decoration: blink;
+    color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+    .HomePageHeader {
+        margin-top: 20px;
+    }
+
+
+
+    /*==================== 
+  Footer 
+====================== */
+
+    /* Main Footer */
+    footer .main-footer {
+        padding: 20px 0;
+        background: #252525;
+    }
+
+    #footer-2 {
+        padding: 20px 0;
+        background-color: white;
+        margin-bottom: -60px;
+    }
+
+    footer ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    /* Copy Right Footer */
+    .footer-copyright {
+        background: #222;
+        padding: 5px 0;
+    }
+
+        .footer-copyright .logo {
+            display: inherit;
+        }
+
+        .footer-copyright nav {
+            float: right;
+            margin-top: 5px;
+        }
+
+            .footer-copyright nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                .footer-copyright nav ul li {
+                    border-left: 1px solid #505050;
+                    display: inline-block;
+                    line-height: 12px;
+                    margin: 0;
+                    padding: 0 8px;
+                }
+
+                    .footer-copyright nav ul li a {
+                        color: #969696;
+                    }
+
+                    .footer-copyright nav ul li:first-child {
+                        border: medium none;
+                        padding-left: 0;
+                    }
+
+        .footer-copyright p {
+            color: #969696;
+            margin: 2px 0 0;
+        }
+
+    /* Footer Top */
+    .footer-top {
+        background: #252525;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #222;
+    }
+
+    /* Footer transparent */
+    footer.transparent .footer-top, footer.transparent .main-footer {
+        background: transparent;
+    }
+
+    footer.transparent .footer-copyright {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer light */
+    footer.light .footer-top {
+        background: #f9f9f9;
+    }
+
+    footer.light .main-footer {
+        background: #f9f9f9;
+    }
+
+    footer.light .footer-copyright {
+        background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    /* Footer 4 */
+    .footer- .logo {
+        display: inline-block;
+    }
+
+    /*==================== 
+  Widgets 
+====================== */
+    .widget {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+        .widget.widget-last {
+            margin-bottom: 0px;
+        }
+
+        .widget.no-box {
+            padding: 0;
+            background-color: transparent;
+            margin-bottom: 40px;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+        }
+
+        .widget.subscribe p {
+            margin-bottom: 18px;
+        }
+
+        .widget li a {
+            color: #fff;
+        }
+
+            .widget li a:hover {
+                color: #aaa;
+                text-decoration: none;
+            }
+
+    .widget-title {
+        margin-bottom: 20px;
+    }
+
+        .widget-title span {
+            background: #839FAD none repeat scroll 0 0;
+            display: block;
+            height: 1px;
+            margin-top: 25px;
+            position: relative;
+            width: 20%;
+        }
+
+            .widget-title span::after {
+                background: inherit;
+                content: "";
+                height: inherit;
+                position: absolute;
+                top: -4px;
+                width: 50%;
+            }
+
+        .widget-title.text-center span, .widget-title.text-center span::after {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+    .widget .badge {
+        float: right;
+        background: #7f7f7f;
+    }
+
+    .typo-light h1,
+    .typo-light h2,
+    .typo-light h3,
+    .typo-light h4,
+    .typo-light h5,
+    .typo-light h6,
+    .typo-light p,
+    .typo-light div,
+    .typo-light span,
+    .typo-light small {
+        color: #fff;
+    }
+
+    ul.social-footer2 {
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+
+        ul.social-footer2 li {
+            display: inline-block;
+            padding: 0;
+        }
+
+            ul.social-footer2 li a:hover {
+                background-color: #ff8d1e;
+            }
+
+            ul.social-footer2 li a {
+                display: block;
+                height: 30px;
+                width: 30px;
+                text-align: center;
+            }
+
+  
+        .btn:hover, .btn:focus, .btn.active {
+            background: #4b92dc;
+            color: #fff;
+            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -webkit-transition: all 250ms ease-in-out 0s;
+            -moz-transition: all 250ms ease-in-out 0s;
+            -ms-transition: all 250ms ease-in-out 0s;
+            -o-transition: all 250ms ease-in-out 0s;
+            transition: all 250ms ease-in-out 0s;
+        }
+
+    #i {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        background-color: #3e3e3e;
+        color: #fff;
+        padding: 9px;
+        border-radius: 5px;
+    }
+
+    #subscribe-box .emailfield {
+        margin: auto;
+    }
+
+    #input {
+        padding: 10px 15px;
+        color: #aaa;
+        border: 3px solid rgba(0,0,0,0.1);
+        font-size: 14px;
+        margin-bottom: 16px;
+        border-radius: 5px;
+        transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+        transition-delay: 0.2s;
+        width: 100%;
+        outline: none;
+        text-align: start;
+        background-color: black
+    }
+
+    input.submitbutton.ripplelink {
+        background: #e67e22;
+        border: 3px solid rgba(0,0,0,0.1);
+        color: #fff;
+        border-color: #e67e22;
+        box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
+        transition-delay: 0s;
+        width: 100%;
+        font-size: 14px;
+        /* font-weight: 700; */
+        border: 0px solid;
+        transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+        padding: 10px 15px;
+        margin-bottom: 16px;
+        border-radius: 5px;
+    }
+
+    .thumb-content ::before {
+        content: "\f190";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        margin-left: 5px;
+        color: #ffffff;
+    }
+
+    .section:first-child {
+        margin-top: 20px;
+    }
+
+    .section {
+        margin-top: 60px;
+    }
+
+#product-container:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.Mainpagediv1:hover {
+   transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.Mainpagediv2:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.Mainpagediv3:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+#itenCard-container:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#Business-partner:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    cursor: pointer;
+}
+
+#cart-container:hover {
+    transform: translateY(-5px);
+    transition: 0.2s ease all;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+
+
+.loader .face {
+        position: absolute;
+        border: 2px solid #121212;
+    }
+
+        .loader .face.face1 {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #090909;
+            box-shadow: 0 0 10px rgba(0,0,0,1);
+            border-radius: 50%;
+            border-left: 2px solid #ffff00;
+            border-top: 2px solid #ffff00;
+            animation: animate 3s linear infinite;
+        }
+
+        .loader .face.face2 {
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background: #090909;
+            box-shadow: 0 0 10px rgba(0,0,0,1);
+            border-radius: 50%;
+            border-right: 2px solid #03a9f4;
+            border-bottom: 2px solid #03a9f4;
+            animation: animate 3s linear reverse infinite;
+        }
+
+        .loader .face .circle {
+            position: absolute;
+            top: calc(50% - 1px);
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            transform-origin: left;
+        }
+
+        .loader .face.face1 .circle {
+            transform: rotate(-45deg);
+        }
+
+        .loader .face.face2 .circle {
+            transform: rotate(-45deg);
+        }
+
+        .loader .face .circle:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #fff;
+            top: -4px;
+            right: -6px;
+        }
+
+        .loader .face.face1 .circle:before {
+            background: #ffff00;
+            box-shadow: 0 0 20px #ff0, 0 0 40px #ff0, 0 0 60px #ff0, 0 0 80px #ff0, 0 0 100px #ff0, 0 0 0 5px rgba(255,255,0,.1);
+        }
+
+        .loader .face.face2 .circle:before {
+            background: #03a9f4;
+            box-shadow: 0 0 20px #03a9f4, 0 0 40px #03a9f4, 0 0 60px #03a9f4, 0 0 80px #03a9f4, 0 0 100px #03a9f4, 0 0 0 5px rgba(3,169,244,.1);
+        }
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.slow-spin {
+    -webkit-animation: slow-spin 6s infinite linear;
+    animation: slow-spin 6s infinite linear;
+}
+
+@keyframes slow-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(3deg) translateZ(100deg);
+        transform: rotateY(369deg);
+    }
+}
+

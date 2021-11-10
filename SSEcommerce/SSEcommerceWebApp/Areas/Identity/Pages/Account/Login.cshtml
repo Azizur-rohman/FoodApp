@@ -1,0 +1,58 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/login.css" />
+
+
+<title>@ViewBag.Title</title>
+<body style="background: rgba(0,0,0,0.7)url('https://media.istockphoto.com/photos/varied-food-carbohydrates-protein-vegetables-fruits-dairy-legumes-on-picture-id1218254547?b=1&k=20&m=1218254547&s=170667a&w=0&h=mOEC7x7qU5NC78mCULs-jAPeLkxy8opOvIbGSnwmAyw='); background-blend-mode: darken; background-repeat: no-repeat; position: relative; background-position: center; background-size: cover; height: 620px; overflow: hidden;">
+    <div style="transform: translateY(100px)">
+        <div class="container card border shadow-lg p-3 mb-5 bg-body rounded-3 w-25 p-3">
+            @*@Html.AntiForgeryToken()*@
+            <h3 class="text-center text-black">@ViewData["Title"]</h3>
+            <div id="MessageDiv" style="text-align: center;">
+                <label><span id="SuccessMessageDiv" style="color:green;">@ViewBag.SuccessMessage</span></label>
+                <label><span id="ErrorMessageDiv" style="color:red;">@ViewBag.ErrorMessage</span></label>
+            </div>
+            <form method="post">
+                <div class="col-12">
+                    <label asp-for="Input.PhoneNumber"></label>
+                    <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger  text-left"></span>
+                </div>
+                <div class="col-12">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Input.Password" class="text-danger  text-left"></span>
+                </div>
+                <div class="col-12 text-left chk-box-margin">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            @Html.CheckBoxFor(m => m.Input.RememberMe)
+                            @Html.LabelFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 20px;">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <p>
+                        @* @Html.ActionLink("Register as a new user", "RegisterUser")*@
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+ 
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+    </body>

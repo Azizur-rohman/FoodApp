@@ -1,0 +1,104 @@
+﻿@model SSEcommerceWebApp.Models.Product
+
+@{
+    ViewData["Title"] = "Add Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container card border-bottom-primary shadow-lg p-3 mb-5 mt-5 bg-body rounded-3 w-50 p-3">
+    <div class="col-md-12">
+        <h4 class="text-center font-weight-bold">@ViewBag.Title</h4>
+    </div> 
+    <form class="row mb-5" asp-action="Create" enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-md-12">
+            <label asp-for="ApplicationUserId" class="control-label">Vendor</label>
+            <select asp-for="ApplicationUserId" class="form-control" asp-items="@ViewBag.Vendor">
+                <option>--Select Vendor--</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Image" class="control-label"></label>
+            <input asp-for="Image" class="form-control" type="file" class="form-control-file form-control" onchange="LoadImage(event)"/>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Description" class="control-label"></label>
+            <textarea asp-for="Description" class="form-control"> </textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        @*<div class="col-md-11 ml-3 form-check">
+            <label class="form-check-label">
+                @Html.DisplayNameFor(model => model.HasQuantity) <input class="form-check-input" asp-for="HasQuantity" />
+            </label>    
+        </div>*@
+        <div class="col-md-12">
+            <label class="form-check-label">
+                @Html.DisplayNameFor(model => model.HasQuantity) <input class="form-check-input ml-2" asp-for="HasQuantity" />
+            </label>    
+            <input asp-for="Quantity" class="form-control"/>
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control"/>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        @*<div class="col-md-12">
+            <label asp-for="CategoryId" class="control-label"></label>
+            <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        </div>*@
+        <div class="col-md-12">
+            <label class="control-label">Category</label>
+            <select id="Category" class="form-control" asp-items="ViewBag.Category" onchange="LoadSubCategory()">
+                <option value="">Select Category</option>
+            </select>
+        </div> 
+        <div class="col-md-12 form-group">
+            <label asp-for="SubCategoryId" class="control-label"></label>
+            <select asp-for="SubCategoryId" class="form-control"></select>
+        </div>
+        <div class="col-md-12 mt-3">
+            <input type="submit" value="Save" class="btn btn-primary float-right ml-3"/>
+            <a class="float-right" asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        function LoadSubCategory() {
+            var categoryId = $("#Category").val();
+            $.ajax({
+                type: "GET",
+                url: "/Products/LoadSubCategoryByCategory",
+                data: { categoryId: categoryId },
+                success: function(res) {
+                    var subCategoryId = $("#subCategoryId").val();
+                    var content = '<option>Select Sub-Category</option>';
+                    $.each(res,
+                        function(index, itemData) {
+                            if (itemData.id == subCategoryId) {
+                                content += '<option selected="selected" value=' +
+                                    itemData.id +
+                                    '>' +
+                                    itemData.name +
+                                    '</option>';
+                            } else {
+                                content += '<option value=' + itemData.id + '>' + itemData.name + '</option>';
+                            }
+
+                        });
+                    $("#SubCategoryId").html("");
+                    $("#SubCategoryId").append(content);
+                }
+            });
+        }
+
+    </script>
+}

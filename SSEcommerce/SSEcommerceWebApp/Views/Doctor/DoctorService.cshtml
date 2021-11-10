@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Doctor";
+    Layout = "_DoctorLayout";
+}
+<img src="~/Images/Business-partner-web-3-tem-3.png" style="position: fixed;height: 100vh;overflow: hidden;top: 0;width: 100%;z-index: -11111; left: 0" />
+<div id="doctorservicetextdiv"><h1>DOCTOR SERVICE</h1></div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-8">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" style="margin-bottom: 10px;">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Neurologist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Cardiologist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Dermatologist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Oncologist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Gynecologist</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <form style="margin-top: -10px; ">
+            <i class="fa fa-search" id="searchDoctoricon"></i>
+            <input type="text" name="SearchDoctor" class="w-100" placeholder="Search doctor/hospital" id="searchDoctors" />
+        </form>
+    </div>
+    <div class="col-md-3 text-center justify-content-center">
+        <a href="@Url.Action("DoctorDetails", "Doctor")">
+        <div style="width: 100%; height: auto; border: 1px solid #D1D1D1; border-radius: 5px; background-color: #fff; text-align: center; margin-top: 20px;">
+            <div id="doctorimg">
+                <img src="~/Images/Doctor-Service.png" style="height: 99%; width: 99%; border-radius: 50%;" />
+            </div>
+            <div style="margin-top: 10px;">
+                <b style="color: black">Prof. Dr. Pran Gopal Datta</b>
+                <p style="color: black">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            </div>
+        </div>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <div style="width: 100%; height: auto; border: 1px solid #D1D1D1; border-radius: 5px; background-color: #fff; text-align: center; margin-top: 20px;">
+            <div id="doctorimg">
+                <img src="~/Images/Doctor-Service.png" style="height: 99%; width: 99%; border-radius: 50%;"/>
+            </div>
+            <div style="margin-top: 10px;">
+                <b style="color: black">Prof. Dr. Pran Gopal Datta</b>
+                <p style="color: black">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div style="width: 100%; height: auto; border: 1px solid #D1D1D1; border-radius: 5px; background-color: #fff; text-align: center; margin-top: 20px;">
+            <div id="doctorimg">
+                <img src="~/Images/Doctor-Service.png" style="height: 99%; width: 99%; border-radius: 50%;" />
+            </div>
+            <div style="margin-top: 10px;">
+                <b style="color: black">Prof. Dr. Pran Gopal Datta</b>
+                <p style="color: black">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div style="width: 100%; height: auto; border: 1px solid #D1D1D1; border-radius: 5px; background-color: #fff; text-align: center; margin-top: 20px;">
+            <div id="doctorimg">
+                <img src="~/Images/Doctor-Service.png" style="height: 99%; width: 99%; border-radius: 50%;" />
+            </div>
+            <div style="margin-top: 10px;">
+                <b style="color: black">Prof. Dr. Pran Gopal Datta</b>
+                <p style="color: black">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div style="width: 100%; height: auto; border: 1px solid #D1D1D1; border-radius: 5px; background-color: #fff; text-align: center; margin-top: 20px;">
+            <div id="doctorimg">
+                <img src="~/Images/Doctor-Service.png" style="height: 99%; width: 99%; border-radius: 50%;" />
+            </div>
+            <div style="margin-top: 10px;">
+                <b style="color: black">Prof. Dr. Pran Gopal Datta</b>
+                <p style="color: black">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            </div>
+        </div>
+    </div>
+</div>

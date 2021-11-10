@@ -1,0 +1,75 @@
+﻿@model SSEcommerceWebApp.Models.Hospital
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_DoctorDashboardLayout.cshtml";
+}
+
+<div class="page-header" style="margin-top: 20px">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title d-flex">
+                <div class="shadow-lg" style="width: 50px; height: 50px; background-color: #098AFC; text-align: center; opacity: 0.7; border-radius: 10px;">
+                    <i class="fa fa-list-alt" style="width: 30px; height: 30px; color: White; margin-top:8px;"></i>
+                </div>
+                <div class="d-inline" style="padding-left: 10px;margin-top: -4px;">
+                    <h5>Add</h5>
+                    <span>Hospital</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container card border border-primary shadow-lg p-3 mb-5 bg-body rounded-3 w-50 p-3">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger">
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+<form asp-action="Add">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortName" class="control-label"></label>
+        <input asp-for="ShortName" class="form-control" />
+        <span asp-validation-for="ShortName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Phonenumber" class="control-label"></label>
+        <input asp-for="Phonenumber" class="form-control" />
+        <span asp-validation-for="Phonenumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location" class="control-label"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+        </label>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

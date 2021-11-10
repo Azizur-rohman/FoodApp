@@ -1,0 +1,63 @@
+﻿@model SSEcommerceWebApp.ViewModels.CustomerLoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container card border-bottom-primary shadow-lg p-3 mb-5 bg-body rounded-3 w-75 p-3">
+    <div class="row">
+        <div class="col-lg-6 d-none d-lg-block"><img src="~/images/download.jpg" style="height:500px;width:400px" /></div>
+        <div class="col-lg-6">
+            <div class="p-5">
+                <div class="text-center">
+                    <h1 class="h2 text-gray-900 mb-4">Login</h1>
+                </div>
+                <section>
+                    <form id="account" method="post">
+                        <hr />
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label asp-for="RememberMe">
+                                    <input asp-for="RememberMe" />
+                                    @Html.DisplayNameFor(m => m.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                @*<a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>*@
+                            </p>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+

@@ -1,0 +1,248 @@
+﻿@using SSEcommerceWebApp.Enums
+@model SSEcommerceWebApp.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Update Vendor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    var nidImage = "/images/upload-d.png";
+    //nidImage = Model.NidImagePath ?? "/images/upload-d.png";
+    //var nidButtonText = Model.Id != null ? "Update NID..." : "Upload NID...";
+    var menuImage ="/images/upload-d.png";;
+    //menuImage = Model.MenuImage != null ? Model.MenuImagePath : "/images/upload-d.png";
+    //var menuIButtonText = Model.Id != null ? "Update Menu..." : "Upload Menu...";
+}
+
+<style>
+    body {
+        font-size:.2rem;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<title>@ViewBag.Title</title>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/site.css" />
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+@*<div class="col-m-12"><marquee direction="right" height="100" bgcolor="white"><h5 class="text-danger">Please, provide address in 'Address' field. You're writing address in 'Contact Person' field.</h5></marquee></div>*@
+
+<div id="MessageDiv">
+     @if (ViewBag.SuccessMessaage!=null)
+{
+    <div id="successMessageDiv" class="alert alert-success text-center">@ViewBag.SuccessMessaage</div>
+}
+@if (ViewBag.ErrorMessage!=null)
+{
+    <div id="errorMessageDiv" class="alert alert-danger text-center">@ViewBag.ErrorMessage</div>
+}
+</div>
+
+    <div class="container card border-bottom-primary shadow-lg p-3 mb-5 mt-5 bg-body rounded-3 w-50 p-3">
+    <form class="row mb-5" enctype="multipart/form-data" method="post">
+            <div class="col-md-12">
+                <p class="text-center font-weight-bold">
+                    @ViewBag.Title
+                </p>
+            </div> 
+        <div class="col-md-12">
+            <p class="font-weight-bold">
+                Basic Info
+            </p>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="RestaurantName" class="form-label">Restaurant Name <span class="text-danger">*</span></label>
+            <input asp-for="RestaurantName" type="text" class="form-control h-25 p-3" placeholder="Restaurant Name" required/>
+            <span asp-validation-for="RestaurantName" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="RestaurantTypeId" class="form-label">Restaurant Type</label>
+        </div> 
+        <div class="col-md-12">
+            @foreach (var type in System.Enum.GetValues(typeof(RestaurantType)))
+            {
+                <label asp-for="RestaurantTypeId">@type</label>
+                <input type="radio" asp-for="RestaurantTypeId" value="@((int)type)"/>
+            }
+            <span asp-validation-for="RestaurantTypeId" class="text-danger"></span>
+        </div>
+        @*<div class="col-md-12">
+            <label asp-for="RestaurantName" class="form-label">Restaurant Location <span class="text-danger">*</span></label>
+            <input asp-for="RestaurantName" type="text" class="form-control h-25 p-3" placeholder="Restaurant Location" required/>
+            <span asp-validation-for="RestaurantName" class="text-danger"></span>
+        </div>*@
+        @*<div class="col-md-12">
+            <label asp-for="RestaurantName" class="form-label">Map Coordinates <span class="text-danger">*</span></label>
+            <input asp-for="RestaurantName" type="text" class="form-control h-25 p-3" placeholder="Restaurant Location" required/>
+            <div class="w-100 border border-primary" style="height:100px"></div>
+            <span asp-validation-for="RestaurantName" class="text-danger"></span>
+        </div>*@
+      <div class="col-md-12">
+            <p class="font-weight-bold">
+                Contact Info
+            </p>
+        </div>
+        <div class="col-md-12">
+            @*<label asp-for="ContactPersonName" class="form-label">Contact Person Name <span class="text-danger">*</span></label>*@
+            <label asp-for="ContactPersonName" class="form-label">Contact Person Name <span class="text-danger"></span></label>
+            @*<input asp-for="ContactPersonName" type="text" class="form-control h-25 p-3" placeholder="Contact Person" required/>*@
+            <input asp-for="ContactPersonName" type="text" class="form-control h-25 p-3" placeholder="Contact Person"/>
+            <span asp-validation-for="ContactPersonName" class="text-danger"></span>
+        </div> 
+        <div class="col-md-12">
+            <label asp-for="PhoneNumber" class="form-label">Contact Number <span class="text-danger">*</span></label>
+            <input asp-for="PhoneNumber" type="number" class="form-control h-25 p-3" placeholder="Contact Number" required pattern="[0-9]{11}" required/>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            @*<label asp-for="Email" class="form-label">Contact Email <span class="text-danger">*</span></label>*@
+            <label asp-for="Email" class="form-label">Contact Email</label>
+            <input asp-for="Email" type="text" class="form-control h-25 p-3" placeholder="Contact Email"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div> 
+        <div class="col-md-12">
+            @*<label asp-for="Email" class="form-label">Contact Email <span class="text-danger">*</span></label>*@
+            <label asp-for="Address" class="form-label">Address</label>
+            <input asp-for="Address" type="text" class="form-control h-25 p-3" placeholder="Address"/>
+            @*<input asp-for="Email" type="text" class="form-control h-25 p-3" placeholder="Contact Email"/>*@
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="col-md-12"> 
+            <label asp-for="FacebookPageLink" class="form-label">Facebook Page Link</label>
+            <input asp-for="FacebookPageLink" type="text" class="form-control h-25 p-3"/>
+            <span asp-validation-for="FacebookPageLink" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+        <label asp-for="RestaurantImage" class="col-12">Restaurant Image</label>
+        <input asp-for="RestaurantImage" type="file" class="form-control-file form-control" onchange="loadNidFile(event)">
+     </div> 
+        <div class="col-md-12">
+        <label asp-for="RestaurantLogo" class="col-12">Restaurant Logo</label>
+        <input asp-for="RestaurantLogo" type="file" class="form-control-file form-control" onchange="loadNidFile(event)">
+        </div>
+        <div class="col-md-12">
+            <label asp-for="NidImage" class="col-12">NID or Trade License (Image)</label>
+            <input asp-for="NidImage" type="file" class="form-control-file form-control" onchange="loadNidFile(event)">
+        </div>
+        @*<div class="col-md-12 mt-3 float-left">
+            <img src="@nidImage" class="upload-box-vendor border border-info" id="output"/>
+        </div>*@
+        <div class="col-md-12">
+            <label asp-for="MenuImage">Upload Menu (Image) </label>
+            <input asp-for="MenuImage" type="file" class="form-control-file form-control" onchange="loadMenuFile(event)">
+        </div>
+        @*<div class="col-md-12 mt-3 float-left">
+            <img src="@menuImage" class="upload-box-vendor border border-info" id="menuOutput"/>
+        </div>*@
+        <fieldset class="col-md-12 form-group mt-1">
+            <div class="row">
+                <label asp-for="IsAvailable" class="col-sm-4 col-form-label text-left">Availability Status</label>
+                <div class="col-sm-8">
+                    <div class="mt-2">  
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="AffectsUsersYes" asp-for="IsAvailable" type="radio" value="true" />
+                            <label class="form-check-label" for="AffectsUsersYes">Online</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="AffectsUsersNo" asp-for="IsAvailable" type="radio" value="false" />
+                            <label class="form-check-label" for="AffectsUsersNo">Offline</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for="IsAvailable" class="text-danger"></span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="col-md-12">
+            <label asp-for="VendorParentId">Main Branch</label>
+            <select asp-for="VendorParentId" class="form-control" asp-items="@ViewBag.Vendors">
+                <option>Select Main Branch (If applicable)</option>
+            </select>
+        </div>
+        <div class="col-md-12 mt-3">
+            <button class="btn btn-success float-right" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+
+
+
+@section Scripts
+{  
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            ToggleShowHide();
+            //$('.custom-file-input').on("change", function () {
+            //        var fileName = $(this).val().split("\\").pop();
+            //        if (fileName.length > 20) {
+            //            fileName = fileName.substring(0, 20) + "...";
+            //        }
+            //        $(this).next('.custom-file-label').html(fileName);
+            //    }
+            //);
+
+            //$('.custom-file-input').on("change", function () {
+            //        var fileName = $(this).val().split("\\").pop();
+            //        if (fileName.length > 20) {
+            //            fileName = fileName.substring(0, 20) + "...";
+            //        }
+            //        $(this).next('.custom-file-label').html(fileName);
+            //    }
+            //);
+        });
+
+        function ToggleShowHide() {
+            var success = $("#successMessageDiv").html();
+            var error = $("#errorMessageDiv").html();
+
+            if (!(success == '' || error == '')) {
+                setTimeout(function () {
+                        $("#MessageDiv").toggle("hide");
+                    },
+                    3000);
+            }
+        }
+
+        //function loadNidFile(event) {
+        //    var output = document.getElementById('nidOutput');
+        //    output.src = URL.createObjectURL(event.target.files[0]);
+        //};  
+        //function loadMenuFile(event) {
+        //    var output = document.getElementById('menuOutput');
+        //    output.src = URL.createObjectURL(event.target.files[0]);
+        //};
+
+        $(document).ready(function () {
+            ToggleShowHide();
+
+            $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    if (fileName.length > 20) {
+                        fileName = fileName.substring(0, 20) + "...";
+                    }
+                    $(this).next('.custom-file-label').html(fileName);
+                }
+            );
+        });
+
+        var loadFile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+}

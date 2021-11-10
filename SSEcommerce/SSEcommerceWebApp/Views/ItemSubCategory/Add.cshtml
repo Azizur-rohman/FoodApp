@@ -1,0 +1,54 @@
+﻿@model SSEcommerceWebApp.Models.SubCategory
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "_AdminLayout";
+}
+
+<div class="page-header" style="margin-top: 20px">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title d-flex">
+                <div class="shadow-lg" style="width: 50px; height: 50px; background-color: #098AFC; text-align: center; opacity: 0.7; border-radius: 10px;">
+                    <i class="fa fa-list-alt" style="width: 30px; height: 30px; color: White; margin-top:8px;"></i>
+                </div>
+                <div class="d-inline" style="padding-left: 10px;margin-top: -4px;">
+                    <h5>Add</h5>
+                    <span>SubCategory</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container card border border-primary shadow-lg p-3 mb-5 bg-body rounded-3 w-50 p-3">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger">
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+    <form asp-action="Add">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden="" asp-for="Id" class="form-control" />
+        <div class="col-12">
+            <label class="control-label">Sub-Category Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter subcategory name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Select Category</label>
+            <select class="form-control h-26 p-0" asp-for="CategoryId" asp-items="@ViewBag.Category" required><option selected disabled value="-1">--Select--</option></select>
+        </div>
+        <div class="col-12" style="margin-top: 20px;">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    setTimeout(function () { $(".alert").css('display', 'none'); }, 5000);
+</script>

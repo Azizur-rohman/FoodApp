@@ -1,0 +1,184 @@
+﻿@{
+    ViewData["Title"] = "Doctor Notification";
+    Layout = "_DoctorDashboardLayout";
+}
+
+<div class="row" style=" margin-top: 20px;">
+    <div class="col-md-3">
+        <div style="width: 70%;">
+            <img src="~/Images/Doctor-Service.png" style="height: 40%; width: 40%; border-radius: 50%; margin-left: 20px;" />
+            <h6>Prof. Dr. Pran Gopal Datta</h6>
+            <p style="font-size: 13px;">Ear, Nose & Throat Specialist & Head Neck Surgeon</p>
+            <p style="font-size: 13px;">MBBS, MCPS, ACORL, PhD, MSc(Audiology), FCPS (ENT), FRCS (Glasgow)</p>
+            <b style="font-size: 13px;">Bangabandhu Sheikh Mujib Medical University Hospital</b>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Today</a>
+            </li>
+        </ul>
+        <div class="modal-header" style="margin-top: -30px;">
+        </div>
+        <div style="width: 100%; height: auto; background-color: #CFCFCF; margin-top: 15px;">
+            <div class="row" id="doctornotificationpatientinfo">
+                <div class="col-md-3 col-3">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-4 col-sm-4 text-center">
+                            <img src="~/Images/Doctor-Service.png" style="height: 30%; width: 80%; border-radius: 50%; margin-top: 20px;" />
+                        </div>
+                        <div class="col-md-8 col-sm-8" style="line-height: 15px;">
+                            <p>Patient Name:</p>
+                            <p style="font-weight: 700; margin-top: -12px;">Md. Mahbub Hossain</p>
+                            <p style="margin-top: -12px;">Age: <b>27</b></p>
+                            <p style="margin-top: -12px;">Appointment Date:</p>
+                            <p style="font-weight: 700; margin-top: -12px;">03 jan 2021</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="d-inline-flex" style="margin-top: 50px;">
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px;"></div>
+                        </div>
+                        <div style="margin-left: 10px;">
+                            <p style="margin-top: -12px;">Appointment Time:</p>
+                            <div class="">
+                                <div class="float-left"><p style="font-weight: 700; margin-top: -12px;">10-12am</p></div>
+                                <div class="float-right">
+                                    <select style="transform: translateY(-14px); border: none; outline: none; background-color: blue; font-size: 10px; color: white">
+                                        <option value="">more</option>
+                                        <option value="1">11-12pm</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px; margin-left: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="d-inline-flex" style="margin-top: 50px;">
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px;"></div>
+                        </div>
+                        <div style="margin-left: 10px;">
+                            <p style="margin-top: -12px;">Hospital Name:</p>
+                            <div class="">
+                                <div class="float-left"><p style="font-weight: 700; margin-top: -12px;">BSSMU</p></div>
+                                <div class="float-right">
+                                    <select style="transform: translateY(-14px); border: none; outline: none; background-color: blue; font-size: 10px; color: white">
+                                        <option value="">more</option>
+                                        <option value="1">DMC</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px; margin-left: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="col-12 text-right">Today 08:30am</div>
+                    <div class="row" style="margin-top: 70px; width: 98%">
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: #06731F; font-weight: 700; background-color: #A5F7B7; display: flex; font-size: 10px;"><i class="fa fa-edit" style="font-size: 10px; margin-top: 2px;"></i>Allow</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: #06731F; font-weight: 700; background-color: #C7F8D2; display: flex; font-size: 10px;"><i class="fa fa-check-circle" style="font-size: 10px; margin-top: 2px;"></i>Accept</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: red; font-weight: 700; background-color: white; display: flex; font-size: 10px;"><i class="fa fa-times-circle" style="font-size: 10px; margin-top: 2px;"></i>Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%; height: auto; background-color: #CFCFCF; margin-top: 15px;">
+            <div class="row" id="doctornotificationpatientinfo">
+                <div class="col-md-3 col-3">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-4 col-sm-4 text-center">
+                            <img src="~/Images/images.jpg" style="height: 30%; width: 80%; border-radius: 50%; margin-top: 20px;" />
+                        </div>
+                        <div class="col-md-8 col-sm-8" style="line-height: 15px;">
+                            <p>Patient Name:</p>
+                            <p style="font-weight: 700; margin-top: -12px;">Ruma Islam</p>
+                            <p style="margin-top: -12px;">Age: <b>23</b></p>
+                            <p style="margin-top: -12px;">Appointment Date:</p>
+                            <p style="font-weight: 700; margin-top: -12px;">05 jun 2021</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="d-inline-flex" style="margin-top: 50px;">
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px;"></div>
+                        </div>
+                        <div style="margin-left: 10px;">
+                            <p style="margin-top: -12px;">Appointment Time:</p>
+                            <div class="">
+                                <div class="float-left"><p style="font-weight: 700; margin-top: -12px;">10-12am</p></div>
+                                <div class="float-right">
+                                    <select style="transform: translateY(-14px); border: none; outline: none; background-color: blue; font-size: 10px; color: white">
+                                        <option value="">more</option>
+                                        <option value="1">11-12pm</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px; margin-left: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="d-inline-flex" style="margin-top: 50px;">
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px;"></div>
+                        </div>
+                        <div style="margin-left: 10px;">
+                            <p style="margin-top: -12px;">Hospital Name:</p>
+                            <div class="">
+                                <div class="float-left"><p style="font-weight: 700; margin-top: -12px;">BSSMU</p></div>
+                                <div class="float-right">
+                                    <select style="transform: translateY(-14px); border: none; outline: none; background-color: blue; font-size: 10px; color: white">
+                                        <option value="">more</option>
+                                        <option value="1">DMC</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="border-left: 1px solid #979797; height: 60px; margin-top: -5px; margin-left: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="col-12 text-right">12:30pm</div>
+                    <div class="row" style="margin-top: 70px; width: 98%">
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: #06731F; font-weight: 700; background-color: #A5F7B7; display: flex; font-size: 10px;"><i class="fa fa-edit" style="font-size: 10px; margin-top: 2px;"></i>Allow</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: #06731F; font-weight: 700; background-color: #C7F8D2; display: flex; font-size: 10px;"><i class="fa fa-check-circle" style="font-size: 10px; margin-top: 2px;"></i>Accept</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <button style="margin-top: 10px; border: none; outline: none; color: red; font-weight: 700; background-color: white; display: flex; font-size: 10px;"><i class="fa fa-times-circle" style="font-size: 10px; margin-top: 2px;"></i>Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

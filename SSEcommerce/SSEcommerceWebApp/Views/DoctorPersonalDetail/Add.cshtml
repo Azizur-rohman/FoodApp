@@ -1,0 +1,42 @@
+﻿@model SSEcommerceWebApp.Models.DoctorPersonalDetail
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_DoctorDashboardLayout.cshtml";
+}
+
+<h1>Add</h1>
+
+<h4>HospitalWithDoctorsId</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-danger">
+                <strong>@ViewBag.Message</strong>
+            </div>
+        }
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Hospitals" class="control-label"></label>
+                <select asp-for="Hospitals" class="form-control" asp-items="@ViewBag.HospitalId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    setTimeout(function () { $(".alert").css('display', 'none'); }, 5000);
+</script>

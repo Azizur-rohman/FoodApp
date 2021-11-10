@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DhakaChoiceLtd.</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <header>
+        <nav style="overflow: hidden; z-index: 1; position: fixed; top: 0; width: 100%" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a id="nav-item-a" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search"> <i class="fa fa-search" style="padding-right: 4px; color: gray;"></i><b id="nav-item-b">Search</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-item-a" class="nav-link text-dark disabled" asp-area="" asp-controller="Home" asp-action="Search"> <i class="fa fa-bell" style="padding-right:4px;color: gray;"></i><b id="nav-item-b">Notification</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-item-a" class="nav-link text-dark" style="cursor: pointer">
+                                <i class='fa fa-coins fa-spin' style="padding-right:4px;color: gray;"></i><b id="nav-item-b">DC Credits</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-item-a" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart"><i class="fa fa-cart-plus" style="padding-right:4px;color: gray;"></i><b id="nav-item-b">Cart (2)</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-item-a" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MyAccount"><i class="fa fa-user-cog" style="padding-right:4px;color: gray;"></i><b id="nav-item-b">My Account</b></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-danger font-weight-bold h5" asp-area="" asp-controller="Home" asp-action="Mainpage" id="Logo">Dhaka Choice Ltd.</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item" id="locationDiv">
+
+                            <!-- Button trigger modal -->
+                            <div class="locationDiv" type="button" data-toggle="modal" data-target="#exampleModal">
+                                Deliver To
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div type="button" data-toggle="modal" data-target="#exampleModal">
+                                <i class="fa fa-map-marker-alt" style="color: orangered"></i> <b id="nav-item-b1">HOME:</b><b id="nav-item-b2">পশ্চিম রাজা বাজার</b><i class="fa fa-angle-down" style="margin-left: 5px;"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-danger font-weight-bold h5" asp-area="" asp-controller="Home" asp-action="Mainpage" id="mobilescreenLogo">Dhaka Choice Ltd.</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <h1 style="color: #FA6904;">
+                            Choose Your Location
+                        </h1>
+                        <input type="text" name="Location" class="col-12 p-3" style="border-style:solid; font-size:16px;" placeholder="Enter Your Location Name. Eg. Gulshan 1" />
+                        <button class="findLocationBtn">
+                            Find Food
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="indexfirstDiv">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h6 class="widget-title">Company</h6>
+                                <ul class="thumbnail-widget font-weight-light">
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">About Us</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">Contact Us</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">Terms & Conditions</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">Cancellation & Refund Policy</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">Privacy Policy</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="thumbnail-content"><a href="#." class="text-white-50">Blog</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h6 class="widget-title">COVERAGE AREA</h6>
+                                <ul class="thumbnail-widget" style="font-weight:300">
+                                    <li>
+                                        <div class="thumb-content text-white-50">&nbsp;Dhaka</div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content text-white-50">&nbsp;Gazipur</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h6 class="widget-title">Help</h6>
+                                <ul class="thumbnail-widget font-weight-light">
+                                    <li>
+                                        <div class="thumb-content text-white-50">Customer Support</div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb-content text-white-50">Live Chat</div>
+                                    </li>
+                                    <li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h6 class="widget-title">GET OUR WEEKLY NEWSLETTER</h6>
+                                <p class="text-white-50 font-weight-light">Want discount vouchers and the latest news from the hottest restaurants?</p>
+                                <div class="emailfield">
+                                    <form>
+                                        <input type="email" name="email" placeholder="Enter your email address" id="input">
+                                        <input class="submitbutton ripplelink" type="submit" value="Submit">
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <a href="#" style="padding-right: 20px"> <i id="i" class="fa fa-facebook"> </i> </a>
+                                <a href="#" style="padding-right: 20px"> <i id="i" class="fa fa-twitter"> </i> </a>
+                                <a href="#" style="padding-right: 20px"> <i id="i" class="fa fa-youtube"> </i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="footer-2">
+            <div class="main-footer widgets-dark typo-light" id="footer-2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title text-dark">ORDER FOOD FROM THE BEST RESTAURANTS WITH HUNGRYNAKI</h5>
+                                <p class="text-dark small">
+                                    FEELING HUNGRY? CAN’T FIND YOUR CHOICE OF FOOD?
+                                    JUST TAP IN HUNGRYNAKI AND SEARCH YOUR MOUTH-WATERING FOODS FROM APPETIZING MENUS.
+                                    IN CASE OF YOUR FAVOURITE LOADED PIZZA OR A FLAVORFUL BURGER CRAVING, HUNGRYNAKI IS ALWAYS THERE TO SERVE THE MEAL ON TIME.
+                                    STUCK IN A BUSY SCHEDULE OF THE OFFICE OR PASSING A LEISURE TIME AT HOME,
+                                    EVERYWHERE HUNGRY NAKI IS THE BEST SOLUTION FOR ORDERING FOOD ONLINE.
+                                    IT MAY BE YOUR CHEAT DAY OR A REGULAR MEAL DAY, WE WANT NO MORE HUNGER GAMES! AND FOR THE SAKE OF THIS HUNGER,
+                                    HUNGRYNAKI IS TORCHING YOU THE DETAILED LIST OF THE TOP MOST POPULAR RESTAURANTS WITH THE VARIETY OF
+                                    LOCAL AND FOREIGN CUISINE TO SATISFY YOUR DESIRED TASTE.
+                                </p>
+                                <p class="text-dark small">
+                                    <b>CHOOSE FROM OVER HUNDREDS OF CUISINES NOW!</b>
+                                    WANT SOME INDIAN, ITALIAN, MEXICAN, WESTERN OR MIDDLE EASTERN FOOD?
+                                    ROLL YOUR TASTE BUDS THROUGH THE INTERNATIONAL COASTER WITH THE VAST
+                                    RANGE OF CUISINES MADE AVAILABLE TO YOU AT YOUR FINGERTIPS. ORDER YOUR FAVOURITE BURGER,
+                                    PIZZA, SOUP, BIRYANI, TEHARI, SALAD, SANDWICH OR DESSERT FROM THE FINEST RESTAURANTS IN
+                                    YOUR AREA AND RECEIVE HOME DELIVERY WITHOUT GOING THROUGH THE HASSLE OF SEVERE TRAFFIC JAMS,
+                                    RAIN AND BURNT SUNNY WEATHER. LET HUNGRYNAKI TAKE CARE OF YOUR MEAL.
+                                </p>
+                                <p class="text-dark small">
+                                    ARE YOU A FOODIE? AS YOU ARE SEARCHING LOCAL FOOD DELIVERY SERVICE ONLINE NEAR YOU,
+                                    HUNGRY NAKI IS ONLY ONE TAP AWAY TO ORDER BURGER FROM TAKEOUT OR CHILLOX, SMOKY BIRANY
+                                    FROM FAKHRUDDIN OR PERI PERI CHICKEN FROM NANDO'S, HUNGRYNAKI HAS A WIDE RANGE OF 4,000+
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="widget subscribe no-box">
+                                <p class="text-dark small">
+                                    RESTAURANTS AVAILABLE IN DHAKA (GULSHAN, BANANI, DHANMONDI, UTTARA),
+                                    SAVAR, GAZIPUR, NARAYANGANJ, CHATTOGRAM, SYLHET, KHULNA AND OTHER PARTS OF BANGLADESH.
+                                    FROM BREAKFAST TO HEAVY LUNCH OR EVENING SNACKS TO DINNER, HUNGRYNAKI OFFERS
+                                    YOU THE FOREMOST PROMOTIONAL OFFERS AND VOUCHERS MAINTAINING PREMIUM QUALITY WITH CONTACTLESS
+                                    EXPRESS HOME DELIVERY. THE FASTEST FOOD DELIVERY WITH PROPER SAFETY
+                                    IS OUR MOTTO WHILE YOUR FOOD HYGIENE IS OUR PRIME CONCERN.
+                                    SO, CHILLAX AT HOME OR WORKPLACE AND LET US DELIVER YOUR LUSCIOUS FOODSTUFFS.
+                                </p>
+                                <p class="text-dark small">
+                                    <b>HOME DELIVERY VIA HUNGRYNAKI MOBILE APP</b><br>
+                                    ORDER FOOD ONLINE ANYTIME FROM ANYWHERE! DOWNLOAD THE HUNGRYNAKI MOBILE APP FOR
+                                    ANDROID AND IOS AND ORDER FOOD VERY SIMPLY. THE IMPRESSIVE AI INTEGRATED HUNGRYNAKI
+                                    APP IS CONFIDENT ENOUGH TO PRESENT EXACTLY WHAT YOU ARE LOOKING FOR.
+                                    TO ORDER FOOD FROM HUNGRYNAKI ONLINE, SELECT YOUR LOCAL AREA AND YOU WILL
+                                    BE SHOWN THE NEAREST RESTAURANTS ONLY. BROWSE THROUGH THE MENUS, AND MAKE YOUR CHOICES.
+                                    ONCE YOU HAVE COMPLETED YOUR ORDER, THE CHOSEN RESTAURANT WILL PREPARE YOUR SELECTED
+                                    FOOD ORDER WHILE YOU PUT YOUR FEET UP.
+                                </p>
+                                <p class="text-dark small">
+                                    HUNGRY NAKI? THEN ORDER, CHILL FOR A WHILE AND RECEIVE YOUR FOOD
+                                    DELIVERED TO YOUR DOORSTEP WITHIN AN HOUR!
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="widget subscribe no-box">
+                                <p class="text-dark small">
+                                    <b>TOP RESTAURANTS AT HUNGRYNAKI</b><br>
+
+                                    FAKRUDDIN | TAKE OUT | EL TORO | AMERICAN BURGER | CALIFORNIA FRIED CHICKEN |
+                                    BURGER KING | CHILLOX | SAUSLYS | PIZZA HUT | KFC | STAR KABAB | GUHAA, THE CAVE KITCHEN
+                                </p>
+                                <p class="text-dark small">
+                                    <b>TOP FOOD MENUS AT HUNGRYNAKI</b><br>
+
+                                    KACCHI BIRYANI | POLAO | KHICHURI | GRILL | KABAB | BEEF ITEMS | CHICKEN ITEMS |
+                                    BURGER | PIZZA | PASTA | CAKE | MOMO | SUSHI | SEAFOOD | STEAK | SOUP | VEGETABLES |
+                                    SALAD | DESSERT ITEMS
+                                </p>
+                                <p class="text-dark small">
+                                    <b>TRENDING IN HUNGRYNAKI</b><br>
+
+                                    RESTAURANT | KITCHEN | STORE | SWEETS | MEDICINE
+                                </p>
+                                <p class="text-dark small">
+                                    <b>POPULAR SEARCHES FOR HUNGRYNAKI</b><br>
+
+                                    FOOD DELIVERY IN DHAKA | LATE NIGHT FOOD DELIVERY | FOOD DELIVERY IN CHITTAGONG |
+                                    ONLINE FOOD ORDER IN DHAKA | BEST FOOD DELIVERY SERVICE IN BD | QUICK FOOD DELIVERY NEAR ME |
+                                    HUNGRYNAKI CUSTOMER CARE | ONLINE MEDICINE SHOP IN BANGLADESH | FOOD DELIVERY IN CASH NEAR ME
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>*@
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>*@
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>*@
+
+    
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

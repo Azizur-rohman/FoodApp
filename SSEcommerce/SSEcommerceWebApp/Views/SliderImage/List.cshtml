@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "List";
+    Layout = "_AdminLayout";
+}
+
+<div id="MessageDiv" style="text-align: center;">
+    <label style="color:green"><span id="SuccessMessageDiv">@ViewBag.SuccessMessage</span></label>
+    <label style="color:red"><span id="ErrorMessageDiv" style="color: red">@ViewBag.ErrorMessage</span></label>
+</div>
+<div id="partialDiv"></div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            ToggleShowHide();
+            LoadData();
+            $("#collapseTicketSetup").addClass("show");
+        });
+        function LoadData() {
+            $.ajax({
+                type: "GET",
+                url: "/SliderImage/LoadData",
+                success: function (res) {
+                    $("#partialDiv").html("");
+                        $("#partialDiv").append(res);
+               }
+            });
+        }
+        //function DeleteSize(id) {
+        //    if (confirm("Are you sure?")) {
+        //        $.ajax({
+        //            type: "GET",
+        //            data: { id: id },
+        //            url: "/Size/DeleteSize",
+        //            success: function (res) {
+        //                alert(res);
+        //                LoadSizes();
+        //            }
+        //        });
+        //    }
+        //}
+        function ToggleShowHide() {
+            var success = $("#SuccessMessageDiv").html();
+            var error = $("#ErrorMessageDiv").html();
+
+            if (!(success == '' && error == '')) {
+                setTimeout(function () {
+                    $("#MessageDiv").toggle("hide");
+                },
+                    3000);
+            }
+        }
+
+    </script>
+}

@@ -1,0 +1,89 @@
+﻿@model SSEcommerceWebApp.Models.SliderImage
+@{
+    ViewData["Title"] = "Add";
+    Layout = "_AdminLayout";
+
+    var image = "";
+
+    if (Model.ImagePath != null)
+    {
+        image =  Model.ImagePath;
+    }
+    else
+    {
+        image = "/images/upload-d.png";
+    }
+
+    var buttonText = Model.Id != 0 ? "Update Image..." : "Choose Image...";
+}
+
+
+<form asp-action="Add" class="d-flex flex-column ml-auto mr-auto mt-3" enctype="multipart/form-data">
+    <div class="form-horizontal col-md-6 ps-5 pe-5 bg-white m-auto form-bg shadow" style="padding-bottom: 60px;">
+        @Html.AntiForgeryToken()
+        <div class="col-md-6 ml-auto mr-auto mt-5 form-header rounded-top">
+            <h5 class="pt-1 pb-1" style="text-align: center" id="addUpdateTitle">Add Slider Image</h5>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="input-group mb-3">
+            <input type="hidden" id="id" asp-for="Id" class="form-control"/>
+            @* <div class="col-md-12">
+                <label asp-for="ActionUrl" class="col-4"></label>
+                <div class="col-12">
+                <input type="text" asp-for="ActionUrl" id="Name" required="required" autocomplete="off" class="form-control" />
+                </div>
+                </div>*@
+            <div class="col-md-12">
+                <label asp-for="Image" class="col-4"></label>
+                <div class="custom-file col-12">
+                    <input asp-for="Image" type="file" class="form-control-file form-control" onchange="loadFile(event)">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="col-4">Status</label>
+                <div class="col-12">
+                    <select asp-for="IsActive" class="form-control">
+                        <option value="true">Active</option>
+                        <option value="false">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3 pl-4 float-left">
+                <img src="@image" class="upload-box border border-info" id="output"/>
+            </div>
+            <div class="col-md-6 mt-5 float-left" style="padding-right: 25px">
+                <input type="submit" id="submitBtn" value="Save" name="btnValue" class="btn btn-primary float-right ml-2"/>
+                <a asp-action="List" class="float-right btn btn-info">Back to list</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+<script>
+    $(document).ready(function () {
+        var id = $("#id").val();
+        if (id != 0) {
+            $("#submitBtn").val("Update");
+            $("#addUpdateTitle").text("Update Category");
+        }
+    });
+
+    $(document).ready(function () {
+        $('.custom-file-input').on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            if (fileName.length > 20) {
+                fileName = fileName.substring(0, 20) + "...";
+            }
+            $(this).next('.custom-file-label').html(fileName);
+        }
+        );
+    });
+
+    var loadFile = function (event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+}

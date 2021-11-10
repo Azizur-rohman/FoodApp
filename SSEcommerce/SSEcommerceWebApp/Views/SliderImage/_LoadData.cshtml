@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SSEcommerceWebApp.Models.SliderImage>
+@{
+    ViewData["Title"] = "Slider Images";
+    int row = 1;
+}
+
+<div class="row">
+    <div class="col-md-10 mt-5 ml-auto mr-auto table_with_custom_header shadow rounded-top border-dark" style="overflow-x: auto">
+        <h4 class="font-weight-bolder text-center p-2">@ViewBag.Title</h4>
+        <a asp-action="Add" class="btn btn-primary mt-3 mb-3"><i class="fas fa-plus-circle"></i> Add New</a>
+        <table class="table table-striped" id="list">
+            <thead>
+                <tr>
+                    <th>#</th>
+                   <th>Image</th>
+                   <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@(row++)</td>
+                        <td><img src="@item.ImagePath" style="width: 47vw; height: 100%;"/></td>
+                        <td>@(item.IsActive?"Active":"Inactive") </td>
+                        <td>@item.ActionUrl</td>
+                        <td>
+                            <a title="Edit" asp-action="Add" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                            <a title="Delete" style="cursor: pointer" onclick="DeleteSize(@item.Id)"><i class="fa fa-trash"></i></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $("#list").dataTable();
+</script>

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<form class="d-none d-md-inline-block form-inline m-auto mr-md-3 my-2 my-md-0">
+    <div class="input-group">
+        <a class="text-white text-decoration-none" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
+        @*<input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>*@
+    </div>
+</form>

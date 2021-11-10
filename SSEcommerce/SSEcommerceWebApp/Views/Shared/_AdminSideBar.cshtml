@@ -1,0 +1,131 @@
+﻿<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Core</div>
+                <a class="nav-link" asp-area="" asp-action="Index" asp-controller="Admin">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
+                </a>
+                <div class="sb-sidenav-menu-heading">Setup</div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVendors" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Vendor
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseVendors" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="VendorSignUpForAdmin" asp-controller="Registration">Add Vendor</a>
+                        <a class="nav-link" asp-action="VendorList" asp-controller="Registration">Vendor List</a>
+                    </nav>
+                </div>
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmins" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Admin
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseAdmins" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="AdminSignUp" asp-controller="Registration">Add Admin</a>
+                        <a class="nav-link" asp-action="AdminList" asp-controller="Registration">Admin List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Product
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseProducts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Create" asp-controller="Products">Add Product</a>
+                        <a class="nav-link" asp-action="Index" asp-controller="Products">Update Quantity</a>
+                    </nav>
+                </div>
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Category
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseCategories" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="ItemCategory">Add Category</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="ItemCategory">Category List</a>
+                    </nav>
+                </div>
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubCategories" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Sub-Category
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseSubCategories" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="ItemSubCategory">Add Sub-Category</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="ItemSubCategory">Sub-Category List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCountries" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Country
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseCountries" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="Country">Add Country</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="Country">Country List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDivisions" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Division
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseDivisions" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="Division">Add Division</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="Division">Division List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDistricts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    District
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseDistricts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="District">Add District</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="District">District List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAreas" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                    Area
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseAreas" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="Area">Add Area</a>
+                        <a class="nav-link" asp-action="Show" asp-controller="Area">Area List</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSliders" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="far fa-images"></i></div>
+                    Slider Image
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseSliders" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" asp-action="Add" asp-controller="SliderImage">Add Slider Image</a>
+                        <a class="nav-link" asp-action="List" asp-controller="SliderImage">Slider Image List</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Developed By:</div>
+            Dhaka Choice LTD.
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Services";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DhakaChoiceLtd.</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <img src="~/Images/web-landing-page3.png" style="position: fixed;height: 100vh;overflow: hidden;top: 0;width: 100%;z-index: -111;" />
+    <div style="text-align: center; margin-top: 10px; z-index: 999999;">
+        <div class="Mainpageimgdiv">
+            <img src="~/Images/dhaka-choice-2f.png" style="width: 270px; height: 140px" class="fa-cog fa-5x slow-spin" />
+        </div>
+        <div style="margin-top: 50px;">
+            <p style="font-size: 30px; color: white; font-weight: 600">--Select Your Service--</p>
+        </div>
+        <div>
+            <div class="Mainpagediv1">
+                <a id="Mainpagediv1-a" href="@Url.Action("BusinessService", "Home")">Business Service</a>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <div class="Mainpagediv2">
+                <a id="Mainpagediv2-a" href="#">Retailer Service</a>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <div class="Mainpagediv3">
+                <a id="Mainpagediv3-a" href="@Url.Action("Mainpage", "Home")">Food Service</a>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <p style="color: white">En/বাংলা</p>
+        </div>
+        <div>
+            <p style="color: white">Free Service</p>
+        </div>
+    </div>
+<div id="indeximgdiv"><img src="~/Images/web-landing-page4.png" style="width: 25%;height: 300px;margin-top: -400px;"/>
+    <img src="~/Images/web-landing-page5.png" class="float-right" style="width: 27%;height: 400px;margin-top: -320px;"/></div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>*@
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>*@
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>*@
+</body>
+</html>

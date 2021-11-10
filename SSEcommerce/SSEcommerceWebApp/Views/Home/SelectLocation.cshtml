@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="~/Images/fav-icon.png" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+    <title>SelectLocation</title>
+</head>
+<body id="backgroundImg">
+    <header class="HomePageHeader">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+
+                <div class="navbar-collapse" id="HomePageNavbar">
+
+
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+
+                            <!-- Button trigger modal -->
+                            <div id="HomePageLogo">
+                                Dhaka Choice Ltd.
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="animated-text">
+        <div class="line">Dhaka Choice Ltd.</div>
+        <div class="line">On A Diet?</div>
+        <div class="line">Game Night?</div>
+        <div class="line">Working Late?</div>
+    </div>
+
+    <div id="HomePagesearchDiv" class="d-flex justify-content-center" align="center">
+
+    </div>
+    <div class="text-center" style="margin-bottom: -5px;">
+        <p class="font-weight-normal text-white">Order Online From Your Favorite Nearby Restaurants</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mx-auto w-50 p-3 text-white text-center">
+                <form>
+                    <input type="text" name="Location" class="col-12 p-3" id="HomePagesearchietms" placeholder="Enter Your Location Name. Eg. Gulshan 1" />
+                    <button class="HomePagefindLocationBtn mr-3">
+                        Find Food
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="margin-top: -20px;">
+        <p class="font-weight-bold text-white" id="HomePagePhone">Having Issues? Call Us &#128222; 09678454545</p>
+    </div>
+</body>
+</html>
